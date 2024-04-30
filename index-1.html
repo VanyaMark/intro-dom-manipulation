@@ -52,19 +52,36 @@
         // Cada ejercicio se resuelve con una línea de código o dos. NO MODIFIQUES EL HTML
 
         // 0. Muestra por consola el texto del nodo h2.
+        let textoH2 = document.querySelector('#header').textContent;
+        console.log("h2: ", textoH2);
 
         // 0b. Muestra por consola el texto del nodo h1
+        console.log('h1: ', document.querySelector('#product-name').textContent)
 
         // 1. Muestra por la consola el valor de la propiedad 'src' de la imagen
+        console.log('image src: ', document.querySelector('img').src)
 
         // 2. Muestra por consola la descripción de este artículo
-
+        console.log('descripción: ', document.querySelector('#description').textContent)
         // 3. Muestra el precio del producto por consola
-
+        console.log('price: ', document.querySelector('.price').textContent)
         // 4. COMPLICADO. Muestra por consola el valor del estilo en línea 'width' del tag <img>
-
+        console.log('image width: ', document.querySelector('img').style.width)
         // 5. DIFÍCIL: Aplica un 21% al precio de este producto y muéstralo por consola
-     
+
+//         let currentPrice = parseFloat(flightReservation.totalPrice.slice(1))
+// console.log(typeof currentPrice)
+// let newPrice = currentPrice * 0.85;
+// newPrice = newPrice.toFixed(2)
+// console.log(newPrice)
+// flightReservation.totalPrice = "$" + newPrice;
+// console.log(flightReservation.totalPrice)
+        let priceWithoutTaxes = parseFloat(document.querySelector('.price').textContent.slice(1));
+        console.log(typeof priceWithoutTaxes)
+        let priceWithTaxes = (priceWithoutTaxes * 1.21).toFixed(2) 
+        priceWithTaxes = '$' + priceWithTaxes;
+        console.log(priceWithTaxes)
+        document.querySelector('.price').textContent = priceWithTaxes;
     </script>
 
 </body>
